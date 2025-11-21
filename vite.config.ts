@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       // Polyfill process.env for the Google GenAI SDK usage in browser
-      'process.env.API_KEY': JSON.stringify(env.API_KEY)
+      // Map VITE_API_KEY from environment to process.env.API_KEY used in the app
+      'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY)
     },
     server: {
       port: 3000
