@@ -1,0 +1,5 @@
+{
+  "name": "BizInsight AI",
+  "description": "An intelligent data analysis tool powered by Gemini, designed to transform raw data into executive insights and operational actions based on specific Job Descriptions and desired impact levels.",
+  "requestFramePermissions": []
+}
