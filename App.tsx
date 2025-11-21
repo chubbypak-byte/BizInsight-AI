@@ -18,7 +18,6 @@ import {
   LineChart as IconLineChart,
   Loader2,
   Upload,
-  FileText,
   Globe,
   FileSpreadsheet,
   MessageSquare,
@@ -26,7 +25,7 @@ import {
   User,
   CornerDownLeft
 } from 'lucide-react';
-import { WowLevel, AppState, AnalysisResult, ChatMessage } from './types';
+import { AppState, AnalysisResult, ChatMessage } from './types';
 import { analyzeData, checkApiKey, askFollowUpQuestion } from './services/gemini';
 
 // Mock data for demo purposes
@@ -94,7 +93,7 @@ const App: React.FC = () => {
       ...prev, 
       isLoading: true, 
       error: null, 
-      result: null,
+      result: null, 
       chatHistory: [] 
     }));
 
@@ -255,7 +254,7 @@ const App: React.FC = () => {
             paddingAngle={5}
             dataKey="value"
           >
-            {result.chartData.map((entry, index) => (
+            {result.chartData.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
